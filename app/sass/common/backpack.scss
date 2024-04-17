@@ -1,0 +1,188 @@
+@import "../libraries/cross-browser";
+@import "../libraries/flex-box";
+@import "../libraries/pseudo-elements";
+@import "../libraries/base-styles";
+@import "../libraries/variables";
+
+.backpack-button {
+  position: fixed;
+  z-index: 2; //выше canvas
+  top: 40px;
+  left: 40px;
+}
+
+.backpack-button_not_active {
+  display: none;
+}
+
+.backpack-button__image {
+  background-color: initial;
+  cursor: pointer;
+}
+
+.backpack-button__image > img {
+  width: 100%;
+  height: 100%;
+
+  @include crossBrowser(user-select, (webkit, moz, ms), none);
+}
+
+.backpack {
+  position: fixed;
+  top: -100vh;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  @include flexBox;
+  @include justifyContent(center);
+  @include  alignItems(center);
+
+  background-color: rgba(0, 0, 0, 0.1);
+
+  @include crossBrowser(transition, (webkit, o), .4s);
+}
+
+.backpack_active {
+  z-index: 5; //выше canvas, кнопки рюкзака
+  top: 0;
+}
+
+.backpack__container {
+  position: relative;
+  background: url('../../images/backpack/backpack-items.png') no-repeat center / 100% 100%;
+}
+
+.backpack__container > img {
+  position: absolute;
+}
+
+.backpack__cross,
+.backpack__arrow {
+  cursor: pointer;
+}
+
+.backpack__cross {
+  right: 0;
+}
+
+.backpack__arrow {
+  display: none;
+  left: 0;
+}
+
+.backpack__arrow_active {
+  display: block;
+}
+
+.backpack__items {
+  position: relative;
+  overflow-y: scroll;
+}
+
+.backpack__items_not_active {
+  display: none;
+}
+
+//.backpack__items::-webkit-scrollbar {
+//  background-color: $pink-white;
+//  width: 10px;
+//}
+//
+//.backpack__items::-webkit-scrollbar-button {
+//  background-color: $pink-white;
+//  width: 10px;
+//  height: 0;
+//}
+//
+//.backpack__items::-webkit-scrollbar-thumb {
+//  background-color: $yellow;
+//}
+
+.backpack__items-container {
+  width: 100%;
+  min-height: 100%;
+
+  @include flexBox;
+  @include crossBrowser(flex-wrap, (ms), wrap);
+}
+
+.backpack__item {
+  background-color: $orange;
+  cursor: pointer;
+
+  @include crossBrowser(transition, (webkit, o), .4s);
+}
+
+.backpack__item:hover {
+  background-color: #ff6623;
+}
+
+.backpack__item:not(:nth-of-type(5n)) {
+  margin: 0 20px 20px 0;
+
+  @media (max-width: 992px) {
+    margin: 0 10px 10px 0;
+  }
+}
+
+.backpack__item > img {
+  user-select: none;
+  width: 75%;
+  height: 75%;
+}
+
+.backpack__item > p {
+
+}
+
+.backpack__item-info {
+  display: flex;
+  position: absolute;
+
+  background-color: #FFD1DF;
+}
+
+.backpack__item-info_not-active {
+  display: none;
+}
+
+.backpack__item-info span {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.backpack__item-info > p {
+  word-break: break-all;
+  margin-left: 20px;
+}
+
+//.scroll-bar::-webkit-scrollbar {
+//  background-color: $pink-white;
+//  width: 10px;
+//}
+//
+//.scroll-bar::-webkit-scrollbar-button {
+//  background-color: $pink-white;
+//  width: 10px;
+//  height: 0;
+//}
+//
+//.scroll-bar::-webkit-scrollbar-thumb {
+//  background-color: $yellow;
+//}
+
+*::-webkit-scrollbar {
+  background-color: $pink-white;
+  width: 10px;
+}
+
+*::-webkit-scrollbar-button {
+  background-color: $pink-white;
+  width: 10px;
+  height: 0;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $yellow;
+}

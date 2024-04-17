@@ -1,0 +1,80 @@
+@import "../libraries/cross-browser";
+@import "../libraries/flex-box";
+@import "../libraries/pseudo-elements";
+@import "../libraries/base-styles";
+@import "../libraries/variables";
+
+.university-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: none;
+
+  width: 100%;
+  height: 100vh;
+}
+
+.university-form_active {
+  @include flexBox;
+  @include justifyContent(center);
+  @include alignItems(center);
+}
+
+.university-form fieldset {
+  @include flexBox;
+  @include justifyContent(space-between);
+  @include crossBrowser(flex-wrap, (ms), wrap);
+
+  width: 50%;
+  height: 50%;
+
+  background: url('../../images/university_in_flesh/frame.png') no-repeat center / cover;
+}
+
+.university-form__question {
+  width: 100%;
+  height: 50%;
+  padding: 2%;
+  margin: 6% 10% 0 10%;
+
+  color: #fff;
+  background-color: #000;
+}
+
+.university-form__answer {
+  width: 50%;
+  height: 10%;
+  padding: 2%;
+  margin: 8% 0 8% 10%;
+
+  color: #fff;
+  background-color: #000;
+
+  cursor: pointer;
+  @include crossBrowser(transition, (o, webkit), .4s);
+}
+
+.university-form__answer:hover {
+  background-color: rgb(40, 40, 40);
+}
+
+.university-form__answer::placeholder {
+  color: #969696;
+}
+
+.university-form__submit {
+  width: 20%;
+  height: 10%;
+  margin: 8% 10% 8% 0;
+
+  color: #fff;
+  background-color: #000;
+
+  cursor: pointer;
+  @include crossBrowser(transition, (o, webkit), .4s);
+}
+
+.university-form__submit:hover {
+  background-color: rgb(40, 40, 40);
+}

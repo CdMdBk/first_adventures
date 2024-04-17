@@ -1,0 +1,53 @@
+@import "../libraries/cross-browser";
+@import "../libraries/flex-box";
+@import "../libraries/pseudo-elements";
+@import "../libraries/base-styles";
+@import "../libraries/variables";
+
+@include installingFont(Pixel Art, 16px);
+@include zeroingOutStyles;
+@include zeroingOutFormElements;
+@include selection((background-color: $accent));
+//@include scrollbar(white, black);
+
+*::-webkit-scrollbar {
+  background-color: $pink-white;
+  width: 10px;
+}
+
+*::-webkit-scrollbar-button {
+  background-color: $pink-white;
+  width: 10px;
+  height: 0;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $yellow;
+}
+
+* {
+  font-weight: normal;
+  color: $accent;
+
+  box-sizing: border-box;
+}
+
+.body {
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+.button-start {
+  position: fixed;
+  left: 50%;
+  bottom: 200px;
+
+  @include crossBrowser(transform, (webkit, ms), translate(-50%, -50%));
+
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 900;
+
+  cursor: pointer;
+}

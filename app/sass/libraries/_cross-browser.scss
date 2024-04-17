@@ -1,0 +1,12 @@
+@mixin crossBrowser($property, $array-prefixes, $value) {
+  #{$property}: $value;
+
+  @each $prefix in $array-prefixes {
+    -#{$prefix}-#{$property}: $value;
+  }
+}
+
+@mixin opacity($value) {
+  opacity: $value;
+  filter: $value;
+}

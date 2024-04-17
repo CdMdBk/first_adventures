@@ -1,0 +1,11 @@
+@import "../libraries/cross-browser";
+@import "../libraries/flex-box";
+@import "../libraries/pseudo-elements";
+@import "../libraries/base-styles";
+
+.canvas {
+  width: 100%;
+  height: 100%;
+
+  background-color: #000;
+}

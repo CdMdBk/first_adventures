@@ -1,0 +1,27 @@
+@mixin selection($array-values) {
+  ::selection {
+    @each $property, $value in $array-values {
+      #{$property}: $value;
+    }
+  }
+
+  ::#{-moz-}selection {
+    @each $property, $value in $array-values {
+      #{$property}: $value;
+    }
+  }
+}
+
+@mixin scrollbar($bg, $color) {
+  ::-webkit-scrollbar {
+    background-color: $bg;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: $color;
+  }
+
+  ::-webkit-scrollbar-button {
+    background-color: $color;
+  }
+}

@@ -1,0 +1,1 @@
+.blackout{position:fixed;top:0;left:0;z-index:3;width:100%;height:100%;opacity:0;transition:8s;-webkit-transition:8s;-o-transition:8s;background-color:#000}.blackout_active{z-index:9999;opacity:1}.blackout_behind-canvas{z-index:-1}

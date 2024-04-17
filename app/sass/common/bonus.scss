@@ -1,0 +1,47 @@
+@import "../libraries/cross-browser";
+@import "../libraries/flex-box";
+@import "../libraries/pseudo-elements";
+@import "../libraries/base-styles";
+
+.bonus {
+  position: fixed;
+  left: -200wv;
+  top: 0;
+
+  display: none;
+  @include justifyContent(center);
+  @include alignItems(center);
+
+  width: 100%;
+  height: 100vh;
+
+  opacity: 0;
+  @include crossBrowser(transition, (webkit, o), 2s);
+}
+
+.bonus_active {
+  left: 0;
+  z-index: 99999;
+
+  @include flexBox;
+}
+
+.bonus_visible {
+  opacity: 1;
+}
+
+.bonus__container {
+  width: calc(100% / 4);
+  height: 75vh;
+  padding: 40px;
+
+  overflow-y: scroll;
+  -ms-overflow-y: scroll;
+
+  background-color: rgb(255,217,102);
+}
+
+.bonus__container p {
+  color: #4c1130;
+  user-select: initial;
+}

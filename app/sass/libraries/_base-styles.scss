@@ -1,0 +1,33 @@
+@mixin installingFont($font, $size) {
+  html {
+    font-size: $size;
+  }
+
+  * {
+    font-family: #{$font}, sans-serif;
+    font-size: 1rem;
+  }
+}
+
+@mixin zeroingOutStyles {
+  * {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+@mixin zeroingOutFormElements {
+  input, textarea, button, {
+    outline: none;
+  }
+
+  textarea {
+    resize: none;
+  }
+}

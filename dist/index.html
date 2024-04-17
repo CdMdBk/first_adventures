@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
+  <meta name="author"
+        content="Shnajder Nikolaj">
+
+  <link rel="stylesheet" href="./styles/common/fonts.css">
+  <link rel="stylesheet" href="./styles/common/main.css">
+  <link rel="stylesheet" href="./styles/common/canvas.css">
+  <link rel="stylesheet" href="./styles/common/blackout.css">
+  <link rel="stylesheet" href="./styles/common/backpack.css">
+  <link rel="stylesheet" href="./styles/common/university-form.css">
+  <link rel="stylesheet" href="./styles/common/bonus.css">
+
+  <link rel="icon" href="./images/favicon.ico">
+  <title>Первое приключение</title>
+</head>
+<body class="body">
+  <canvas id="canvas"
+          class="canvas"></canvas>
+
+  <p id="game-start-button"
+     class="button-start">Кликни по мне)</p>
+
+  <div class="backpack-button">
+    <button id="backpack-button"
+            class="backpack-button__image backpack-button_not_active"
+            type="button"
+            title='Жмякни "и", чтобы открыть рюкзак'>
+      <img class=""
+           src="./images/backpack/backpack.png"
+           alt="backpack-button">
+    </button>
+  </div>
+  
+  <div id="backpack"
+       class="backpack">
+    <div class="backpack__container">
+      <img id="cross"
+           class="backpack__cross"
+           src="./images/backpack/cross.png"
+           alt="cross">
+
+      <img id="arrow"
+           class="backpack__arrow"
+           src="./images/backpack/arrow.png"
+           alt="go back">
+
+      <div class="backpack__items">
+        <div class="backpack__items-container"></div>
+      </div>
+
+      <div class="backpack__item-info backpack__item-info_not-active">
+        <img src="" alt="none">
+        <div>
+          <h2></h2>
+          <div class="scroll-bar"><p></p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="blackout"
+       class="blackout blackout_behind-canvas"></div>
+
+  <form id="university"
+        class="university-form"
+        method="post"
+        readonly
+        onfocus="this.removeAttribute('readonly')">
+    <fieldset>
+      <label for="answer"
+             class="university-form__question"></label>
+
+      <input id="answer"
+             class="university-form__answer"
+             type="text"
+             name="answer"
+             required
+             placeholder="Наклацай ответ здесь"
+             pattern="[а-яА-ЯёЁa-zA-Z\s\d]+">
+
+      <input class="university-form__submit"
+             type="submit"
+             value="Ответить">
+    </fieldset>
+  </form>
+
+  <div class="bonus">
+    <div class="bonus__container">
+    </div>
+  </div>
+
+  <script src="./levels/start-game.js"
+          type="module"></script>
+  <script src="./common/player-actions.js"
+          type="module"></script>
+</body>
+</html>
