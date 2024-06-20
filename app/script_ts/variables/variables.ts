@@ -2,22 +2,22 @@ import {Field, Size, MapObjects, Keys, ArrayDOM, Camera, Level} from "./interfac
 
 //DOM elements--------------------------------------------------
 
-const buttonStart:HTMLElement = document.querySelector('.button-start');
-const blackout:HTMLElement = document.querySelector('#blackout');
+const buttonStart:HTMLElement = document.querySelector('.button-start') as HTMLElement;
+const blackout:HTMLElement = document.querySelector('#blackout') as HTMLElement;
 
-const backpackButton:HTMLButtonElement = document.querySelector('#backpack-button');
-const backpack:HTMLElement = document.querySelector('#backpack');
+const backpackButton: HTMLButtonElement = document.querySelector('#backpack-button') as HTMLButtonElement;
+const backpack:HTMLElement = document.querySelector('#backpack') as HTMLElement;
 
-const formQuestion:HTMLElement = document.querySelector('#university');
+const formQuestion:HTMLElement = document.querySelector('#university') as HTMLElement;
 
-const bonus:HTMLElement = document.querySelector('.bonus');
+const bonus:HTMLElement = document.querySelector('.bonus') as HTMLElement;
 
 let arrayDOM:ArrayDOM = {
   items: []
 }
 
-const cross:HTMLElement = document.querySelector('#cross');
-const arrow:HTMLElement = document.querySelector('#arrow');
+const cross:HTMLElement = document.querySelector('#cross') as HTMLElement;
+const arrow:HTMLElement = document.querySelector('#arrow') as HTMLElement;
 
 //palette--------------------------------------------------
 
@@ -34,8 +34,8 @@ const spacePalette:string[] = [
 
 //canvas--------------------------------------------------
 
-const canvas:HTMLCanvasElement = document.querySelector('#canvas');
-const ctx:CanvasRenderingContext2D = canvas.getContext('2d');
+const canvas: HTMLCanvasElement = document.querySelector('#canvas') as HTMLCanvasElement;
+const ctx: CanvasRenderingContext2D = canvas.getContext('2d') as CanvasRenderingContext2D;
 
 const halfCanvas:Size = {};
 const previousCanvas:Size = {}

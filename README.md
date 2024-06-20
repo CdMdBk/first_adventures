@@ -1,9 +1,5 @@
-First adventures
+# First adventures
 
-Запустить игру через плагин Live Server в IDE Visual Studio Code или через IDEs JetBrains, например, IntellijIDEA или WebStorm
-
----
+Запустить игру через плагин Live Server в IDE Visual Studio Code или через IDEs JetBrains, например, Intellij IDEA или WebStorm
 
 Первая пробная версия 2d игры с видом сверху, в которой можно поизучать локации, найти спрятанные предметы, поговорить с НПС и повзаимодействовать с некоторыми из них. Также на одной из локаций можно будет сразиться с демонами
-
-Игра сделана на canvas на языке TypeScript
